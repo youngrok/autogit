@@ -1,2 +1,3 @@
 autogit.egg-info
 *.pyc
+dist
