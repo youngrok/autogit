@@ -12,6 +12,6 @@ def savepoint():
     
     run('git checkout autosave')
     if run('git status --porcelain').stdout:
-        run('git add .')
+        run('git add --all .')
         print run('git commit -m "autosave"')
     
