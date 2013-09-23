@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+import argparse
+from autogit import watch, savepoint
+
+parser = argparse.ArgumentParser(description='autosave using git')
+subparsers = parser.add_subparsers(help='autogit commands list')
+subparsers.add_parser('watch', 
+                      help='watch current directory and autosave when something changes').\
+                      set_defaults(action=watch)
+subparsers.add_parser('savepoint', 
+                      help='git commit to autosave branch when something changes').\
+                      set_defaults(action=savepoint)
+
+args = parser.parse_args()
+args.action()
